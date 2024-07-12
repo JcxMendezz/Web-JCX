@@ -996,10 +996,10 @@ export const layouts = {
 };
 
 export const heights: { [key: string]: number } = {
-  lg: 280,
+  lg: 300,
   md: 180,
   sm: 164,
   xs: 136,
 };
 
-export const memojis = ["images/memoji-1.png", "images/memoji-2.png"];
+export const memojis = ["images/sticker.png", "images/laptop wave.png"];

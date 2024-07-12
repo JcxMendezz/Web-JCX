@@ -15,8 +15,8 @@ export const Bio = () => {
         opacity: 0,
         backgroundColor: "#ffc6d7",
         transition: {
-          duration: 0.5,
-          delay: 0.65,
+          duration: 0.9,
+          delay: 0.45,
         },
       });
 
@@ -66,18 +66,18 @@ export const Bio = () => {
       </div>
       <p className={cn(styles.about)}>
         <span className={cn(styles.indentation)}>
-          I&apos;m{" "}
+          {" "}
           <span
             style={{
               fontFamily: "var(--moranga)",
               fontSize: 40,
             }}
           >
-            Houssine
+            I&apos;m Juan Méndez
           </span>
-          , a creative developer and graphic designer from X911, Andromeda.
-          I&apos;m interested in Next.js, Node, Product Design, Startups,
-          Basketball and Music.
+          , a creative developer and graphic designer from Villavicencio, Colombia.
+          I&apos;m Working in Next.js, Node, Astro, Product Design, Startups,
+          Futbol and Music.
         </span>
       </p>
       <button

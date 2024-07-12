@@ -39,7 +39,7 @@ export const Header = ({ setFilter }: { setFilter: any }) => {
       </div>
       <Filter setFilter={setFilter} />
       <Link
-        href="mailto:houssaineamzil18@gmail.com"
+        href="mailto:juanmendez17t@gmail.com"
         className={styles.contactButton}
         style={{ lineHeight: "normal" }}
       >
