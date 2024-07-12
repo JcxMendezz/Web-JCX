@@ -7,7 +7,7 @@ import cn from "classnames";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nev Flynn Clone 😁",
+  title: "JCX Portfolio",
   description: "this is just a clone go check the real website",
   authors: [
     { name: "Høussaine Amzil", url: "https://houssaineamzil.vercel.app" },

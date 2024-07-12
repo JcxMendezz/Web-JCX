@@ -43,7 +43,7 @@ export const Header = ({ setFilter }: { setFilter: any }) => {
         className={styles.contactButton}
         style={{ lineHeight: "normal" }}
       >
-        Contact
+        Contact Me! 
       </Link>
     </motion.nav>
   );
