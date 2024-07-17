@@ -152,7 +152,7 @@ export const Bio = () => {
             marginLeft: "6px",
           }}
         >
-          Toggle Lockdown
+          Toggle Emoji
         </p>
       </button>
     </div>
