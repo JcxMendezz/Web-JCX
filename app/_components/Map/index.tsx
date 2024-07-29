@@ -5,73 +5,79 @@ import { motion } from "framer-motion";
 import mapboxgl from "mapbox-gl";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import styles from "./styles.module.scss";
 
 export const Map = () => {
   const { theme } = useTheme();
   const [mouseEntered, setMouseEntered] = useState(false);
-  const [map, setMap] = useState<mapboxgl.Map | any>();
-  const [zoom, setZoom] = useState(12);
-  const mapRef = useRef<any>();
-
-  const handleZoom = (type: "in" | "out") => {
-    return "in" === type
-      ? (map.flyTo({
-          zoom: zoom + 4,
-        }),
-        setZoom((prev) => {
-          return prev + 4;
-        }))
-      : "out" === type
-        ? (map.flyTo({
-            zoom: zoom - 4,
-          }),
-          setZoom((prev) => {
-            return prev - 4;
-          }))
-        : void 0;
-  };
+  const [map, setMap] = useState<mapboxgl.Map | null>(null);
+  const [zoom, setZoom] = useState(13.78);
+  const mapRef = useRef<HTMLDivElement>(null);
 
   const mapStyle =
-    theme == "dark" ? "ckmtfwtc528ra17k72f5v8pzy" : "ckmq30o0a0pzx17qoi8dxp3ou";
+    theme === "dark"
+      ? "clyyz85z301b301qo45htab6c" // Estilo oscuro
+      : "clytc9cvd006f01qo3u716sxy"; // Estilo claro
+
+  const accessToken =
+    "pk.eyJ1IjoiamN4bWVuZGV6IiwiYSI6ImNseXh3MzAzZzA3dGsybXB2dDR3aTBvcjYifQ.88iK8r_Y5rJsDNFcGw7VBQ";
+
+  const handleZoom = useCallback(
+    (type: "in" | "out") => {
+      const zoomChange = type === "in" ? 4 : -4;
+      map?.flyTo({ zoom: zoom + zoomChange });
+      setZoom((prev) => prev + zoomChange);
+    },
+    [map, zoom]
+  );
+
+  const handleMouseEnter = useCallback(() => setMouseEntered(true), []);
+  const handleMouseLeave = useCallback(() => setMouseEntered(false), []);
 
   useEffect(() => {
-    setTimeout(() => {
-      mapboxgl.accessToken =
-        "pk.eyJ1IjoibmV2Zmx5bm4iLCJhIjoiY2ttcTJlbHptMms0cjJ2cW9uaGxxNjI0NSJ9.RJAjJtHGrGB43W_XaylAnA";
+    if (!mapRef.current) return;
 
-      setMap(
-        new mapboxgl.Map({
-          container: mapRef.current as HTMLDivElement,
-          style: `mapbox://styles/nevflynn/${mapStyle}?optimize=true`,
-          center: [-6.9396635, 33.9693338],
-          zoom: zoom,
-          dragPan: false,
-          scrollZoom: false,
-          dragRotate: false,
-          boxZoom: false,
-          doubleClickZoom: false,
-          attributionControl: false,
-        }),
-      );
+    const timer = setTimeout(() => {
+      mapboxgl.accessToken = accessToken;
+
+      const newMap = new mapboxgl.Map({
+        container: mapRef.current as HTMLDivElement,
+        style: `mapbox://styles/jcxmendez/${mapStyle}`,
+        center: [-73.60742, 4.14003],
+        zoom: zoom,
+        bearing: 246.4, // Añadido según el enlace proporcionado
+        pitch: 22, // Añadido según el enlace proporcionado
+        dragPan: false,
+        scrollZoom: false,
+        dragRotate: false,
+        boxZoom: false,
+        doubleClickZoom: false,
+        attributionControl: false,
+        trackResize: false,
+        collectResourceTiming: false,
+      });
+
+      setMap(newMap);
+
+      return () => newMap.remove();
     }, 750);
-  }, []);
+
+    return () => clearTimeout(timer);
+  }, [mapStyle, zoom, accessToken, theme]);
+
+  const mapImageUrl = `https://api.mapbox.com/styles/v1/jcxmendez/${mapStyle}/static/-73.60742,4.14003,${zoom},246.4,22/300x200@2x?access_token=${accessToken}`;
 
   return (
     <div
       className={cn(styles.container)}
-      onMouseEnter={() => {
-        return setMouseEntered(true);
-      }}
-      onMouseLeave={() => {
-        return setMouseEntered(false);
-      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div
         className={cn(styles.static)}
         style={{
-          backgroundImage: `url("https://api.mapbox.com/styles/v1/nevflynn/${mapStyle}/static/-6.845059,33.990777,${zoom}/280x280?access_token=pk.eyJ1IjoibmV2Zmx5bm4iLCJhIjoiY2ttcTJlbHptMms0cjJ2cW9uaGxxNjI0NSJ9.RJAjJtHGrGB43W_XaylAnA&attribution=false&logo=false")`,
+          backgroundImage: `url("${mapImageUrl}")`,
         }}
       />
       <div ref={mapRef} className={cn(styles.mapContainer)}></div>
@@ -92,16 +98,16 @@ export const Map = () => {
             rotate: mouseEntered ? [0, 15, 0, -15, 0] : 1,
           }}
           transition={{
-            repeat: mouseEntered ? 1 / 0 : 0,
+            repeat: mouseEntered ? Infinity : 0,
             duration: mouseEntered ? 1.6 : 0.5,
           }}
         >
           <Image
             alt=""
             className={cn(styles.memoji)}
-            width={32}
-            height={44}
-            src="/images/memoji-1.png"
+            width={50}
+            height={50}
+            src="/images/globe.png"
           />
         </motion.div>
       </motion.div>
@@ -109,28 +115,12 @@ export const Map = () => {
         <motion.div
           key="out"
           className={cn(styles.zoomButton)}
-          style={{
-            left: 14,
-          }}
-          onClick={() => {
-            return handleZoom("out");
-          }}
-          initial={{
-            opacity: 0,
-            scale: 0,
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-          }}
-          exit={{
-            opacity: 0,
-            scale: 0,
-          }}
-          transition={{
-            duration: 0.25,
-            delay: 1,
-          }}
+          style={{ left: 14 }}
+          onClick={() => handleZoom("out")}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+          transition={{ duration: 0.25, delay: 1 }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +128,7 @@ export const Map = () => {
             height="24"
             viewBox="0 0 24 24"
           >
-            <path d="M0,0H24V24H0Z" fill="none"></path>
+            <path d="M0,0H24V24H0Z" fill="none" />
             <path
               d="M16,12H8"
               fill="none"
@@ -146,7 +136,7 @@ export const Map = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="1.5"
-            ></path>
+            />
           </svg>
         </motion.div>
       )}
@@ -154,28 +144,12 @@ export const Map = () => {
         <motion.div
           key="in"
           className={cn(styles.zoomButton)}
-          style={{
-            right: 14,
-          }}
-          onClick={() => {
-            return handleZoom("in");
-          }}
-          initial={{
-            opacity: 0,
-            scale: 0,
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-          }}
-          exit={{
-            opacity: 0,
-            scale: 0,
-          }}
-          transition={{
-            duration: 0.25,
-            delay: 1,
-          }}
+          style={{ right: 14 }}
+          onClick={() => handleZoom("in")}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+          transition={{ duration: 0.25, delay: 1 }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -183,23 +157,15 @@ export const Map = () => {
             height="24"
             viewBox="0 0 24 24"
           >
-            <path d="M0,0H24V24H0Z" fill="none"></path>
+            <path d="M0,0H24V24H0Z" fill="none" />
             <path
-              d="M12,8v8"
+              d="M12,8v8M16,12H8"
               fill="none"
               stroke="var(--icon)"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-            ></path>
-            <path
-              d="M16,12H8"
-              fill="none"
-              stroke="var(--icon)"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-            ></path>
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.5"
+            />
           </svg>
         </motion.div>
       )}

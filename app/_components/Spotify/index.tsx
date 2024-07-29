@@ -3,10 +3,10 @@ import styles from "./styles.module.scss";
 
 export const Spotify = ({ key }: { key?: any }) => {
   const { name, href, type, artists } = {
-    name: "Tu veux mon zizi",
-    href: "https://open.spotify.com/track/1ImRLQGYsmrn3NaiKvO6pt?autoplay=true",
+    name: "Podcast DevTalles",
+    href: "https://open.spotify.com/show/0jrfxcnCrD7N9tlA0BGJp5?si=e7a92da79db94762",
     type: "",
-    artists: ["Francky Vincent"],
+    artists: ["FH", "Developer"],
   };
   // const { name, href, type, artists } = {
   // 	name: "Kids Of The Night",

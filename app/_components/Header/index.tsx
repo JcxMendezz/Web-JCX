@@ -15,10 +15,10 @@ export const Header = ({ setFilter }: { setFilter: any }) => {
     >
       <div className={styles.logoWrapper}>
         <Image
-          src="/images/logo.svg"
-          alt=""
-          width={72}
-          height={24}
+          src="/images/logoJCX.png"
+          alt="Logo JCX"
+          width={100}
+          height={60}
           className={styles.logo}
           onLoad={(e: any) => {
             e.target?.src.indexOf("data:image/gif;base64") < 0 &&
@@ -41,7 +41,7 @@ export const Header = ({ setFilter }: { setFilter: any }) => {
       <Link
         href="mailto:juanmendez17t@gmail.com"
         className={styles.contactButton}
-        style={{ lineHeight: "normal" }}
+        style={{ lineHeight: "Normal" }}
       >
         Contact Me! 
       </Link>

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   title: "JCX Portfolio",
   description: "this is just a clone go check the real website",
   authors: [
-    { name: "Høussaine Amzil", url: "https://houssaineamzil.vercel.app" },
+    { name: "Juan Camilo Méndez", url: "https://houssaineamzil.vercel.app" },
   ],
   openGraph: {
-    title: "Nev Flynn Clone 😁",
+    title: "JCX Portfolio",
     description: "this is just a clone go check the real website",
     url: "https://navflynn-houssaineamzil.vercel.app",
-    siteName: "Høussaine Amzil — Creative Developer",
+    siteName: "JCX Méndez — Creative Developer",
     images: [
       {
         url: "https://navflynn-houssaineamzil.vercel.app/og.png",
