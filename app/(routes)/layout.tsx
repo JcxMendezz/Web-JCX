@@ -8,18 +8,18 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "JCX Portfolio",
-  description: "this is just a clone go check the real website",
+  description: "Hola, soy Juan Camilo Méndez, un desarrollador creativo de Colombia.",
   authors: [
-    { name: "Juan Camilo Méndez", url: "https://houssaineamzil.vercel.app" },
+    { name: "Juan Camilo Méndez", url: "https://web-jcx.vercel.app/" },
   ],
   openGraph: {
     title: "JCX Portfolio",
-    description: "this is just a clone go check the real website",
-    url: "https://navflynn-houssaineamzil.vercel.app",
+    description: "Hola, soy Juan Camilo Méndez, un desarrollador creativo de Colombia.",
+    url: "https://web-jcx.vercel.app/",
     siteName: "JCX Méndez — Creative Developer",
     images: [
       {
-        url: "https://navflynn-houssaineamzil.vercel.app/og.png",
+        url: "https://web-jcx.vercel.app/sticker.png",
         width: 1920,
         height: 1080,
       },

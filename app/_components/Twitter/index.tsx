@@ -47,7 +47,7 @@ export const Twitter = () => {
           fill="currentColor"
         ></path>
       </svg>
-      <Link href="https://twitter.com/houssaineamzil" />
+      <Link href="https://x.com/JuanM193" />
     </div>
   );
 };
