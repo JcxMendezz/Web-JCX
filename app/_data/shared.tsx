@@ -1002,4 +1002,4 @@ export const heights: { [key: string]: number } = {
   xs: 136,
 };
 
-export const memojis = ["images/sticker.png", "images/laptop wave.png"];
+export const memojis = [ "images/hey.png", "images/sticker.png"];

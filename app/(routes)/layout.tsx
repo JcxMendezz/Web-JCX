@@ -8,13 +8,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "JCX Portfolio",
-  description: "Hola, soy Juan Camilo Méndez, un desarrollador creativo de Colombia.",
-  authors: [
-    { name: "Juan Camilo Méndez", url: "https://web-jcx.vercel.app/" },
-  ],
+  description:
+    "Hola, soy Juan Camilo Méndez, un desarrollador creativo de Colombia.",
+  authors: [{ name: "Juan Camilo Méndez", url: "https://web-jcx.vercel.app/" }],
+
   openGraph: {
     title: "JCX Portfolio",
-    description: "Hola, soy Juan Camilo Méndez, un desarrollador creativo de Colombia.",
+    description:
+      "Hola, soy Juan Camilo Méndez, un desarrollador creativo de Colombia.",
     url: "https://web-jcx.vercel.app/",
     siteName: "JCX Méndez — Creative Developer",
     images: [

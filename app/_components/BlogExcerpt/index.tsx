@@ -7,56 +7,40 @@ export const BlogExcerpt = ({ key }: { key?: any }) => {
     <div key={key} className={cn(styles.container)}>
       <div className={cn(styles.copy)}>
         <h2 className={cn(styles.title)} style={{ marginBottom: 4 }}>
-          How it started vs. how it&apos;s going
+          My creative learning line through time. 
         </h2>
         <p className={cn(styles.description)}>
-          A short personal history as it relates to design and development, and
-          how I&apos;ve found value in the cross-section between both
-          disciplines.
+          As a professional I always like to be in constant challenge and learning showing my creativity embodied in every line, every idea and every project.
+          Check my github profile to learn more about my work.
         </p>
       </div>
       <div className={cn(styles.footer)}>
         <Link
           className={cn(styles.readMoreButton)}
-          href="/posts/how-it-started-vs-how-its-going"
+          href="https://github.com/JcxMendezz"
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18.256"
-            height="18.256"
-            viewBox="0 0 18.256 18.256"
+            height="20"
+            width="20"
+            viewBox="0 0 16 16"
+            version="1.1"
+            aria-hidden="true"
           >
-            <g transform="translate(5.363 5.325)">
-              <path
-                d="M14.581,7.05,7.05,14.581"
-                transform="translate(-7.05 -7.012)"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-              ></path>
-              <path
-                d="M10,7l5.287.037.038,5.287"
-                transform="translate(-7.756 -7)"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-              ></path>
-            </g>
-            <path d="M0,0H18.256V18.256H0Z" fill="none"></path>
+            <path
+              fillRule="evenodd"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+              fill="currentColor"
+            ></path>
           </svg>
           <p
             className={cn(styles.pica)}
             style={{ lineHeight: "normal", marginLeft: 6 }}
           >
-            Read more
+            Check my Github
           </p>
         </Link>
         <p className={cn(styles.pica)} style={{ color: "#8A949E" }}>
-          May 5, 2021
+          August, 2024
         </p>
       </div>
     </div>
