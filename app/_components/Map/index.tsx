@@ -15,10 +15,10 @@ export const Map = () => {
   const [zoom, setZoom] = useState(13.78);
   const mapRef = useRef<HTMLDivElement>(null);
 
-  const mapStyle =
-    theme === "dark"
-      ? "clyyz85z301b301qo45htab6c" // Estilo oscuro
-      : "clytc9cvd006f01qo3u716sxy"; // Estilo claro
+  const mapStyle = 'dark-v10';
+    //theme === "dark"
+     // ? "clyyz85z301b301qo45htab6c" // Estilo oscuro
+     // : "clytc9cvd006f01qo3u716sxy"; // Estilo claro
 
   const accessToken =
     "pk.eyJ1IjoiamN4bWVuZGV6IiwiYSI6ImNseXh3MzAzZzA3dGsybXB2dDR3aTBvcjYifQ.88iK8r_Y5rJsDNFcGw7VBQ";
@@ -66,7 +66,7 @@ export const Map = () => {
     return () => clearTimeout(timer);
   }, [mapStyle, zoom, accessToken, theme]);
 
-  const mapImageUrl = `https://api.mapbox.com/styles/v1/jcxmendez/${mapStyle}/static/-73.60742,4.14003,${zoom},246.4,22/300x200@2x?access_token=${accessToken}`;
+  const mapImageUrl = `https://api.mapbox.com/styles/v1/mapbox/${mapStyle}/static/-73.60742,4.14003,${zoom}/300x200?access_token=${accessToken}`;
 
   return (
     <div
