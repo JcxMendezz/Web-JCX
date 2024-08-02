@@ -3,6 +3,6 @@ export const GET = async () => {
   // 	next: { revalidate: 120 },
   // })
 
-  const data = { count: 451 };
+  const data = { count: 25 };
   return Response.json(data, { status: 200 });
 };
