@@ -94,7 +94,7 @@ Aunque este es un proyecto personal, aprecio cualquier sugerencia o reporte de p
 
 ## Autor ✒️
 
-* **Tu Nombre** - *Diseño y Desarrollo* - [Tu perfil de GitHub](https://github.com/tu-usuario)
+* Juan Camilo Méndez - *Diseño y Desarrollo* - [Profile JcxMendezz](https://github.com/JcxMendezz)
 
 ## Licencia 📄
 
@@ -107,4 +107,4 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.m
 
 ---
 
-⌨️ con ❤️ por [Tu Nombre](https://tu-portafolio-url.com) 😊
+ ❤️ (https://web-jcx.vercel.app/) 
