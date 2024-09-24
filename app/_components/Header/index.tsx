@@ -15,7 +15,7 @@ export const Header = ({ setFilter }: { setFilter: any }) => {
     >
       <div className={styles.logoWrapper}>
         <Image
-          src="/images/logoJCX.png"
+          src="/images/LogoJCX.png"
           alt="Logo JCX"
           width={100}
           height={60}
@@ -43,7 +43,7 @@ export const Header = ({ setFilter }: { setFilter: any }) => {
         className={styles.contactButton}
         style={{ lineHeight: "Normal" }}
       >
-        Contact Me! 
+        Contact Me!
       </Link>
     </motion.nav>
   );
