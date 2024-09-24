@@ -15,10 +15,10 @@ export const Map = () => {
   const [zoom, setZoom] = useState(13.78);
   const mapRef = useRef<HTMLDivElement>(null);
 
-  const mapStyle = 'dark-v10';
-    //theme === "dark"
-     // ? "clyyz85z301b301qo45htab6c" // Estilo oscuro
-     // : "clytc9cvd006f01qo3u716sxy"; // Estilo claro
+  const mapStyle = "dark-v10";
+  //theme === "dark"
+  // ? "clyyz85z301b301qo45htab6c" // Estilo oscuro
+  // : "clytc9cvd006f01qo3u716sxy"; // Estilo claro
 
   const accessToken =
     "pk.eyJ1IjoiamN4bWVuZGV6IiwiYSI6ImNseXh3MzAzZzA3dGsybXB2dDR3aTBvcjYifQ.88iK8r_Y5rJsDNFcGw7VBQ";
