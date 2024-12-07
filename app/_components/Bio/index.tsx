@@ -76,7 +76,7 @@ export const Bio = () => {
             I&apos;m Juan Méndez
           </span>
           , a creative developer from Villavicencio,
-          Colombia. I&apos;m Working in Next.js, Node, Astro, Product Design,
+          Colombia. I&apos;m Working in Next.js, Node, Astro, Typescript, Product Design,
           Startups, Futbol and Music.
         </span>
       </p>
