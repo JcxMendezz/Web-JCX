@@ -28,7 +28,7 @@ const Page = () => {
         ease: "easeInOut",
       },
     });
-  }, []);
+  }, [controls]);
 
   return (
     <motion.div className={styles.container}>
